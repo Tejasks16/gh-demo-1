@@ -8,3 +8,10 @@ jobs:
         run: echo "Hello Everyone, Good Morning!"
       - name: Printing statement 2
         run: echo "You are learning Githus-Actions"
+      - name: Install NodeJs
+        uses: actions/setup-node@v6
+        with:
+          node-version: '18'
+      - name: Testing nodejs
+        run: node --version
+        
