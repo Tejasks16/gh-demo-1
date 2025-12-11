@@ -32,6 +32,6 @@ jobs:
           ls -ltr .
       - name: Read file contents
         run: |
-          echo " Contents of file are:
+          echo "Contents of file are:"
           cat /home/runner/work/gh-demo-1/gh-demo-1/message.txt
     
