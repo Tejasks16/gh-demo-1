@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Create output file
+      - name: Create a output file
         run: |
           mkdir -p build
           echo "Hello from build job" > build/message.txt
@@ -16,3 +16,16 @@ jobs:
         with:
           name: build-output
           path: build/
+  test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v6
+        with:
+          name: build-output
+          path: .
+      - name: List the Files
+        run: |
+          echo "Downloaded Files are:"
+          pwd
+          ls -ltr .
